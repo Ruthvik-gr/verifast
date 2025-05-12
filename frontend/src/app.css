@@ -1,0 +1,207 @@
+/* Custom styles for the News RAG Chatbot */
+
+/* Primary color palette */
+:root {
+  --primary-50: #f0f7ff;
+  --primary-100: #e0effe;
+  --primary-200: #bae0fd;
+  --primary-300: #7cc8fb;
+  --primary-400: #36aaf5;
+  --primary-500: #0c8ee7;
+  --primary-600: #0070c4;
+  --primary-700: #015aa0;
+  --primary-800: #064b85;
+  --primary-900: #0a3f6f;
+  
+  --secondary-50: #f5f3ff;
+  --secondary-100: #ede9fe;
+  --secondary-200: #ddd6fe;
+  --secondary-300: #c4b5fd;
+  --secondary-400: #a78bfa;
+  --secondary-500: #8b5cf6;
+  --secondary-600: #7c3aed;
+  --secondary-700: #6d28d9;
+  --secondary-800: #5b21b6;
+  --secondary-900: #4c1d95;
+}
+
+/* Background gradient */
+.bg-gradient-custom {
+  background: linear-gradient(135deg, var(--primary-50), white, var(--secondary-50));
+}
+
+/* Header styles */
+.header {
+  background-color: white;
+  border-bottom: 1px solid var(--primary-100);
+  padding: 0.75rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  background: linear-gradient(to right, var(--primary-600), var(--secondary-600));
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  background: linear-gradient(to right, var(--primary-600), var(--secondary-600));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Button styles */
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  color: var(--primary-600);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-50);
+  color: var(--primary-800);
+}
+
+.btn:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Message styles */
+.message-user {
+  background: linear-gradient(to right, var(--primary-600), var(--secondary-600));
+  color: white;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.message-assistant {
+  background-color: white;
+  border: 1px solid #f3f4f6;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.message-system {
+  background-color: #fffbeb;
+  border: 1px solid #fef3c7;
+  color: #92400e;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Input area */
+.input-container {
+  border-top: 1px solid var(--primary-100);
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.input-field {
+  width: 100%;
+  padding: 1rem;
+  padding-right: 3.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-200);
+  transition: all 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--primary-500);
+}
+
+.send-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--primary-600), var(--secondary-600));
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.send-button:hover:not(:disabled) {
+  background: linear-gradient(to right, var(--primary-700), var(--secondary-700));
+  transform: scale(1.05);
+}
+
+.send-button:disabled {
+  background: linear-gradient(to right, #d1d5db, #d1d5db);
+  cursor: not-allowed;
+}
+
+/* Animation classes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Loading indicator */
+.loading-dot {
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 9999px;
+}
+
+.loading-dot-1 {
+  background-color: var(--primary-400);
+  animation: bounce 1s infinite;
+  animation-delay: 0s;
+}
+
+.loading-dot-2 {
+  background-color: var(--primary-500);
+  animation: bounce 1s infinite;
+  animation-delay: 0.2s;
+}
+
+.loading-dot-3 {
+  background-color: var(--primary-600);
+  animation: bounce 1s infinite;
+  animation-delay: 0.4s;
+}
