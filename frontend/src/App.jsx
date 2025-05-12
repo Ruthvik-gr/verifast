@@ -222,7 +222,7 @@ function App() {
   
   const clearChat = () => {
     if (sessionId && connected) {
-      axios.delete(`/api/sessions/${sessionId}/clear`)
+      axios.delete(`/api/sessions/${sessionId}`)
         .then(() => {
           setMessages([]);
           setShowWelcome(true);
